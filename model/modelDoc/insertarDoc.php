@@ -40,7 +40,7 @@ $resultado=$sentencia->execute([$tipo,$numero,$id]);
 //echo "Resultado ". $resultado ;
     if($resultado === TRUE){
           echo "Datos ingresados con éxito";
-          header('Location: ../crudDNI.php');
+          header('Location: ../crudDNI.php?id='.$id);
       } else {
          echo "Error";
        }

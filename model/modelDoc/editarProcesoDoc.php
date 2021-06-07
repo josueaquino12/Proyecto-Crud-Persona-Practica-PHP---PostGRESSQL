@@ -18,7 +18,7 @@
 	$resultado = $sentencia->execute([$numero,$id]);
 
 	if ($resultado === TRUE) {
-		header('Location: ../crudDNI.php');
+		header('Location: ../crudDNI.php?id='.$id);
 	}else{
 		echo "Error" ;
 	}

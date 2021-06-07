@@ -86,7 +86,7 @@ $personas = $resultado ->fetchAll(PDO::FETCH_OBJ);
        <td scope="col"><a type="button" class="btn btn-success" 
         href="model/editar.php?id=<?php echo $dato->id; ?>">Editar</a></td>
        <td scope="col"><a type="button" class="btn btn-danger" 
-       href="model/eliminar.php?id=<?php echo $dato->id; ?>">Eliminar</a></td>
+       href="javascript:confirmarBorrado('model/eliminar.php?id=<?php echo $dato->id; ?>')">Eliminar</a></td>
        <td scope="col"><a type="button" class="btn btn-primary" 
        href="model/crudDNI.php?id=<?php echo $dato->id; ?>">Agregar Documentacion</a></td>
 
@@ -104,6 +104,14 @@ $personas = $resultado ->fetchAll(PDO::FETCH_OBJ);
    $(document).ready( function () {
     $('#table_id').DataTable();
     } );</script>
+
+    <script>
+function confirmarBorrado(delUrl) {
+  if (confirm("¿Desea borrar esta persona?")) {
+   document.location = delUrl;
+  }
+}
+</script>
 
 </body>
 </html>
